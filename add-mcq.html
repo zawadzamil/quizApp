@@ -66,7 +66,7 @@
         <div class="topic">
             <h2 class="text-center u-text-black">Please Select your Topic</h2>
             <div class="text-center">
-                <select name="topic" id="topic" class="bg-gray-900 p-3 lg:w-2/6 sm:w-full shadow-lg rounded-lg text-white">
+                <select name="topic" id="topic" class="bg-gray-900 p-3 lg:w-2/6 sm:w-8/12 shadow-lg rounded-lg text-white">
                     <option selected disabled value="">Choose a Topic</option>
                     <option value="Adjectives and Adverbs">Adjectives and Adverbs</option>
                     <option value="Articles">Articles</option>
@@ -114,35 +114,60 @@
 
          <!--Insert Question Section{MCQ}-->
          <div class="flex flex-col items-center justify-center" id="mcqParent">
-            <div class="  mcq text-center mt-8 bg-blue-200 w-8/12 rounded-lg shadow-xl " id="mcq">
+            <div class="  mcq text-center mt-8 bg-blue-200 w-11/12 lg:w-8/12 rounded-lg shadow-xl " id="mcq">
                 <div class="question p-8 ">
-                    Insert Your Question Bellow (Checkbox) <br>
-                    <textarea name="question" id="question" rows="1" class="bg-gray-200 lg:w-8/12 p-4 mt-4 sm:w-full">
+                    Insert Your Question Bellow  (Checkbox) and Select Relative Figure(Optional) <br>
+                  
+                        <textarea name="question" id="question" rows="1" class="bg-gray-200 lg:w-8/12 p-4 sm:w-full inline mt-8 relative">
     
                         </textarea>
+                        <br> (Optional)
+                        <input type="file" name="figure" id="figure" class="inline ml-4  rounded text-center w-full lg:w-4/12 p-4 sm:mt-4 ">
+                       
+
+                  
+                   <!--Add  Options-->
                     <div class="options h-full  " id="optionDiv">
                         <p>Select Options</p>
     
     
-                        <div class="mb-2 p-2">
+                        <div class="mb-2">
     
                             <label for="option1">1</label>
                             <input type="text" name="option1" id="" placeholder="Enter Option"
-                                class="p-2 px-4 ml-2 lg:w-2/6 w-4/6 bg-green-200 shadow-xl rounded-lg">
+                                class="p-2 px-4 ml-2 lg:w-2/6 w-4/6 bg-green-200 shadow-xl rounded-lg"> OR
+                                <input type="file" name="figure" id="figure" class="inline ml-4 relative rounded text-center w-full lg:w-4/12 p-4 sm:mt-4 ">
     
                         </div>
                         <div class="mb-2 p-2">
     
                             <label for="option2">2</label>
                             <input type="text" name="option2" id="" placeholder="Enter Option"
-                                class="p-2 px-4 ml-2 lg:w-2/6 w-4/6 bg-green-200 shadow-xl rounded-lg">
+                                class="p-2 px-4 ml-2 lg:w-2/6 w-4/6 bg-green-200 shadow-xl rounded-lg">OR
+                                <input type="file" name="figure" id="figure" class="inline ml-4 relative rounded text-center w-full lg:w-4/12 p-4 sm:mt-4 ">
     
                         </div>
     
     
                     </div>
+                    <!--END Add  Options-->
+
+                        <!--Add/Remove More Options-->
+
                     <button id="add" class="bg-gray-800 p-2 rounded-lg text-white hover:bg-green-900 text-sm lg:text-lg mb-2 lg:mb-0">Add More Option</button>
                     <button id="remove"  class="bg-red-800 p-2 rounded-lg text-white hover:bg-red-900 text-sm lg:text-lg">Remove Option</button>
+
+                        <!--END Add/Remove More Options-->
+
+                            <!--Input Answer -->
+                        <div class="correct mt-4" >
+                            <p class="text-red-600">Please Type Corrct Answer (1/2/3/4) and Write ' , ' Separeted if Mltiple Answers Present(1,2/2,4/1,2,4)</p>
+                           
+                           <label for="correctAnsMCQ" class="p-2 bg-green-800 rounded-lg text-white ">Answer(s)</label>
+                           <input type="text" value="" id="correctAnsMCQ" placeholder="Correct Answer(s)" class="p-2 rounded-lg w-8/12 lg:w-4/12 bg-green-200 shadow-lg">
+                        </div>
+                           <!--END Input Answer -->
+                       
     
     
                 </div>
@@ -156,9 +181,12 @@
             
 
          </div>
-         <div class="flex mt-4 justify-center">
-            <button id="addMoreMCQ" class="text-sm mt-2 text-blue-700 bg-blue-300 p-2 rounded-lg">Add More Question</button>
-        </div>
+
+                <!--Submit Button/ Submit Question to Database Button-->
+         <div class="submit text-center">
+             <button id="addQuestionMCQ" class="lg:w-2/12 w-4/12 px-4 text-white p-2 rounded-lg bg-stone-800 mt-4 hover:bg-gray-600 ">Submit Question</button>
+         </div>
+        
        
         
           <!--END Insert Question Section-->
@@ -167,35 +195,58 @@
 
             <!--Insert Question Section{Radio}-->
          <div class="flex flex-col items-center justify-center" id="radioParent">
-            <div class="  mcq text-center mt-8 bg-green-200 w-8/12 rounded-lg shadow-xl " id="radio">
+            <div class="  mcq text-center mt-8 bg-green-200 w-11/12 lg:w-8/12 rounded-lg shadow-xl " id="radio">
                 <div class="question p-8 ">
-                    Insert Your Question Bellow (Radio)<br>
+                    Insert Your Question Bellow (Radio) and Select Relative Figure(Optional)<br>
                     <textarea name="question" id="question" rows="1" class="bg-gray-200 lg:w-8/12 p-4 mt-4 sm:w-full">
     
                         </textarea>
+                        <br>
+                        (Optional)
+                         <input type="file" name="figure" id="figure" class="inline ml-4 relative rounded text-center w-full lg:w-4/12 p-4 sm:mt-4 ">
+
+                         <!--Input Options-->
                     <div class="options h-full  " id="optionDivRadio">
                         <p>Select Options</p>
     
-    
+                      
                         <div class="mb-2 p-2">
     
                             <label for="option1">1</label>
                             <input type="text" name="option1" id="" placeholder="Enter Option"
-                                class="p-2 px-4 ml-2 lg:w-2/6 w-4/6 bg-blue-300 shadow-xl rounded-lg">
+                                class="p-2 px-4 ml-2 lg:w-2/6 w-4/6 bg-blue-300 shadow-xl rounded-lg"> OR
+                                <input type="file" name="figure" id="figure" class="inline ml-4  rounded text-center w-full lg:w-4/12 p-4 sm:mt-4 ">
     
                         </div>
                         <div class="mb-2 p-2">
     
                             <label for="option2">2</label>
                             <input type="text" name="option2" id="" placeholder="Enter Option"
-                                class="p-2 px-4 ml-2 lg:w-2/6 w-4/6 bg-blue-300 shadow-xl rounded-lg">
-    
+                                class="p-2 px-4 ml-2 lg:w-2/6 w-4/6 bg-blue-300 shadow-xl rounded-lg"> OR
+                                <input type="file" name="figure" id="figure" class="inline ml-4  rounded text-center w-full lg:w-4/12 p-4 sm:mt-4 ">
+                                
                         </div>
     
     
                     </div>
+                    <!--END Input Options-->
+
+                    <!--Add or Remove Options-->
+
                     <button id="addRadio" class="bg-gray-800 p-2 rounded-lg text-white hover:bg-green-900 text-sm lg:text-lg mb-2 lg:mb-0">Add More Option</button>
                     <button id="removeRadio"  class="bg-red-800 p-2 rounded-lg text-white hover:bg-red-900 text-sm lg:text-lg">Remove Option</button>
+
+                    <!--END Add or Remove Options-->
+
+
+                     <!--Input Answer -->
+                     <div class="correct mt-4" >
+                        <p class="text-red-600">Please Type Corrct Answer (1/2/3/4) </p>
+                       
+                       <label for="correctAnsMCQ" class="p-2 bg-blue-800 rounded-lg text-white ">Answer</label>
+                       <input type="number" min="1" max="10" maxlength="1" value="" id="correctAnsRadio" placeholder="Correct Answer" class="p-2 rounded-lg w-8/12 lg:w-4/12 bg-blue-200 shadow-lg">
+                    </div>
+                       <!--END Input Answer -->
     
     
                 </div>
@@ -209,21 +260,28 @@
             
 
          </div>
+
+
+                <!--Submit Button/ Submit Question to Database Button-->
+         <div class="submit text-center">
+            <button id="addQuestionRadio" class="lg:w-2/12 w-4/12 px-4 text-white p-2 rounded-lg bg-stone-800 mt-4 hover:bg-gray-600 ">Submit Question</button>
+        </div>
            
           <!--END Insert Question Section  Radio-->
 
 
            <!--Insert Question Section{Fill In The Blank}-->
          <div class="flex flex-col items-center justify-center" id="gapParent">
-            <div class="  mcq text-center mt-8 bg-yellow-100 w-8/12 rounded-lg shadow-xl " id="gap">
+            <div class="  mcq text-center mt-8 bg-yellow-100 w-11/12 lg:w-8/12 rounded-lg shadow-xl " id="gap">
                 <div class="question p-8 ">
-                    Insert Your Question Bellow (Fill in the Blank)<br>
+                    Insert Your Question Bellow (Fill in the Blank) and Select Relative Figure(Optional)<br>
                     <div class="mt-8">
                         <span > Before blank:</span>   
                         <br>
                     </div>
 
                  
+                    <!--Input Question Area-->
                     
                     <textarea name="before_blank" id="before_blank" rows="1" class="bg-gray-200 lg:w-8/12 p-4 mt-2 sm:w-full mb-4 rounded-lg relative">
     
@@ -243,9 +301,15 @@
                         <textarea name="after_blank" id="after_blank" rows="1" class="bg-gray-200 lg:w-8/12 p-4 mt-2 sm:w-full rounded-lg">
         
                             </textarea>
+                            <br>
+                            (Optional)
+                            <input type="file" name="figure" id="figure" class="inline ml-4  rounded text-center w-full lg:w-4/12 p-4 sm:mt-4 "> 
+
+                      <!--END Input Question Area-->
                        
 
                    
+                      <!--Input Answer-->
                     <div class="options h-full  " id="optionDivRadio">
                         <p>Answer</p>
     
@@ -259,7 +323,7 @@
                         </div>
                        
                         </div>
-                        <button id="addRadio" class="bg-gray-800 p-2 rounded-lg text-white hover:bg-green-900 text-sm lg:text-lg mb-4 lg:mb-0">Submit</button>
+                       
     
     
                     </div>
@@ -273,18 +337,27 @@
     
     
             </div>
+
+
+                 <!--Submit Button/ Submit Question to Database Button-->
+            <div class="submit text-center">
+                <button id="addQuestionGap" class="lg:w-2/12 w-4/12 px-4 text-white p-2 rounded-lg bg-stone-800 mt-4 hover:bg-gray-600 ">Submit Question</button>
+            </div>
            
           <!--END Insert Question Section  Radio-->
 
 
            <!--Insert Question Section{Descriptive}-->
            <div class="flex flex-col items-center justify-center" id="descParent">
-            <div class="  mcq text-center mt-8 bg-gray-400 w-8/12 rounded-lg shadow-xl " id="desc">
+            <div class="  mcq text-center mt-8 bg-gray-400 w-11/12 lg:w-8/12 rounded-lg shadow-xl " id="desc">
                 <div class="question p-8 ">
-                    Insert Your Question Bellow (Descriptive) <br>
+                    Insert Your Question Bellow (Descriptive) and Select Relative Figure(Optional) <br>
                     <textarea name="question" id="question" rows="2" class="bg-gray-200 lg:w-8/12 p-4 mt-4 sm:w-full">
     
                         </textarea>
+                        <br>
+                        (Optional)
+                        <input type="file" name="figure" id="figure" class="inline ml-4  rounded text-center w-full lg:w-4/12 p-4 sm:mt-4 ">
                    <div>
                         <button id="add" class="bg-gray-800 mt-4 p-2 rounded-lg text-white hover:bg-gray-600 text-sm lg:text-lg mb-2 lg:mb-0">Submit</button>
 
@@ -304,6 +377,12 @@
             
 
          </div>
+
+
+                 <!--Submit Button/ Submit Question to Database Button-->
+         <div class="submit text-center">
+            <button id="addQuestionDesc" class="lg:w-2/12 w-4/12 px-4 text-white p-2 rounded-lg bg-stone-800 mt-4 hover:bg-gray-600 ">Submit Question</button>
+        </div>
            
 
 
